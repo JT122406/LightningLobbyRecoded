@@ -1,0 +1,30 @@
+
+name: LightningLobby
+version: '${project.version}'
+main: xyz.lightningmc.Main
+api-version: 1.18
+authors: [ JTMcQuigg ]
+description: Moves skript to actual plugin for minigames lobby
+website: https://web.lightning-mc.xyz/
+softdepend:
+  - PartyAndFriendsGUI
+commands:
+  gmc:
+    description: set gamemode to creative
+    usage: /<command>
+    aliases: [gmcreative]
+  gma:
+    description: set gamemode to adventure
+    usage: /<command>
+    aliases: [gmadventure]
+  gms:
+    description: set gamemode to survival
+    usage: /<command>
+    aliases: [gmsurvival]
+  gmsp:
+    description: set gamemode to spectator
+    usage: /<command>
+    aliases: [gmspectator]
+permissions:
+  gamemode.change:
+    description: allows updating gamemode
