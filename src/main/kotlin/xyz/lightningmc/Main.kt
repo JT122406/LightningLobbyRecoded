@@ -3,9 +3,7 @@ package xyz.lightningmc
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import xyz.lightningmc.commands.*
-import xyz.lightningmc.listeners.PreventDamage
-import xyz.lightningmc.listeners.PreventDrops
-import xyz.lightningmc.listeners.PreventInteractions
+import xyz.lightningmc.listeners.*
 
 class LightningLobby : JavaPlugin() {
     override fun onEnable() {
@@ -22,6 +20,10 @@ class LightningLobby : JavaPlugin() {
         Bukkit.getPluginManager().registerEvents(PreventDrops(), this)
         Bukkit.getPluginManager().registerEvents(PreventInteractions(), this)
         Bukkit.getPluginManager().registerEvents(PreventDamage(), this)
+        Bukkit.getPluginManager().registerEvents(InvClick(), this)
+        Bukkit.getPluginManager().registerEvents(LobbyJoin(), this)
+        Bukkit.getServer().logger.info("Registered Listeners")
+        Bukkit.getServer().logger.info("Lightning Lobby Loaded")
     }
 
     override fun onDisable() {
